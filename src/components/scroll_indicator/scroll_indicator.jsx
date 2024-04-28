@@ -25,6 +25,11 @@ function ScrollIndicator({url}){
   //스크롤 이벤트 처리
   useEffect(()=>{
     window.addEventListener('scroll',chageScrollEvent)
+
+    return(()=>{
+      //unmount: 컴포넌트가 해제되면 동작
+      window.removeEventListener('scroll',chageScrollEvent);
+    })
   }, [])   // []: update는 동작안게 설정
   function chageScrollEvent(){
     //스크롤의 위치를 감지
