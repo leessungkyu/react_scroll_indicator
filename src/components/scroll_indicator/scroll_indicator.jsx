@@ -25,7 +25,7 @@ function ScrollIndicator({url}){
   //스크롤 이벤트 처리
   useEffect(()=>{
     window.addEventListener('scroll',chageScrollEvent)
-  })
+  }, [])   // []: update는 동작안게 설정
   function chageScrollEvent(){
     //스크롤의 위치를 감지
     //현재 스크롤 위치
